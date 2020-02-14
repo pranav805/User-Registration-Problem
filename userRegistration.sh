@@ -3,9 +3,8 @@ shopt -s extglob
 clear
 echo "WELCOME TO USER REGISTRATION SYSTEM"
 
-nameExpression="^[A-Z]{1}[a-z]{3,}$"
-
-function firstName(){
+nameExpression="^[A-Z]{1}[a-z]{2,}$"
+function firstAndLastName(){
    if [[ $1 =~ $2 ]]
    then
       echo "Valid"
@@ -14,8 +13,11 @@ function firstName(){
    fi
 }
 
-read -p "Enter first name: " firstName
-firstName $firstName $nameExpression
+read -p "Enter First name: " firstName
+firstAndLastName $firstName $nameExpression
+
+read -p "Enter Last name: " lastName
+firstAndLastName $lastName $nameExpression
 
 
 
